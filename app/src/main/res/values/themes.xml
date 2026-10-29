@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.BtMessenger" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">@color/tg_fab</item>
+        <item name="android:windowBackground">@color/tg_header</item>
+        <item name="android:statusBarColor">@color/tg_header</item>
+        <item name="android:navigationBarColor">@color/tg_header</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+    </style>
+</resources>

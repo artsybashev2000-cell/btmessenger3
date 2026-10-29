@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainRoot"
+    android:background="@color/tg_chat_bg"
+    android:orientation="vertical">
+
+    <!-- Верхняя панель: сверху получает отступ под статус-бар (WindowInsets), цвет шапки уходит под него -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tg_header"
+        android:elevation="4dp"
+        android:orientation="vertical">
+
+    <!-- Шапка -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_back"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_back"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/headerAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/status_starting"
+                android:textColor="@color/tg_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Тревожная кнопка: в чате всегда на виду, а не спрятана в меню -->
+        <TextView
+            android:id="@+id/btnSos"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_sos_button"
+            android:contentDescription="@string/cd_sos"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/sos_button"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnMore"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_menu"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_more" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <!-- Говорит собеседник (входящая рация): видно на любом экране -->
+    <TextView
+        android:id="@+id/radioBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_radio_bar"
+        android:gravity="center_vertical"
+        android:minHeight="36dp"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="6dp"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Главный экран: чаты и устройства рядом -->
+    <FrameLayout
+        android:id="@+id/listPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/tg_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_search"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:importantForAccessibility="no"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/tg_secondary" />
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:background="@null"
+                    android:hint="@string/search_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/tg_secondary"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <!-- Состояние связи: на связи / подключение / Bluetooth выключен и т. п. -->
+            <LinearLayout
+                android:id="@+id/statusBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_banner"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="44dp"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="4dp"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/bannerDot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/bannerText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/bannerAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/tg_accent"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowVisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_circle_blue"
+                    android:contentDescription="@string/cd_visible"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_visibility" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/visible_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/visible_subtitle"
+                        android:textColor="@color/tg_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="88dp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/fabScan"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_circle_blue"
+            android:contentDescription="@string/cd_scan"
+            android:elevation="6dp"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_search" />
+    </FrameLayout>
+
+    <!-- Чат -->
+    <LinearLayout
+        android:id="@+id/chatPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_chat_wallpaper"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Нет связи: сообщения копятся и уйдут при подключении -->
+        <LinearLayout
+            android:id="@+id/offlineBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tg_header"
+            android:gravity="center_vertical"
+            android:minHeight="44dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/offlineText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/tg_secondary_light"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/offlineAction"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/tg_accent"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messageList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/geoProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tg_header"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="@string/geo_locating"
+            android:textColor="@color/tg_accent"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- Идёт запись: голосовое сообщение (таймер, отмена, отправка) или рация (в эфире, пока держите кнопку) -->
+        <LinearLayout
+            android:id="@+id/recordBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tg_header"
+            android:gravity="center_vertical"
+            android:minHeight="56dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="4dp"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/recordDot"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/bg_record_dot" />
+
+            <TextView
+                android:id="@+id/recordTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:minWidth="44dp"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/recordHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="8dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/tg_secondary_light"
+                android:textSize="13sp" />
+
+            <ImageButton
+                android:id="@+id/recordCancel"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_voice_cancel"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_close"
+                app:tint="@color/tg_secondary_light" />
+
+            <ImageButton
+                android:id="@+id/recordSend"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_circle_blue"
+                android:contentDescription="@string/cd_voice_send"
+                android:padding="11dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_send" />
+        </LinearLayout>
+
+        <!-- Панель ввода: «таблетка» + круглая кнопка отправки. Нижний отступ = навигация или клавиатура (WindowInsets) -->
+        <LinearLayout
+            android:id="@+id/inputBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_pill"
+                android:gravity="bottom"
+                android:minHeight="48dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:background="@null"
+                    android:hint="@string/message_hint"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="1000"
+                    android:maxLines="5"
+                    android:minHeight="48dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/tg_secondary"
+                    android:textSize="17sp" />
+
+                <!-- Микрофон: короткое нажатие — голосовое сообщение, удержание — рация -->
+                <ImageButton
+                    android:id="@+id/btnMic"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cd_mic"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_mic"
+                    android:visibility="gone"
+                    app:tint="@color/tg_secondary" />
+
+                <ImageButton
+                    android:id="@+id/btnLocation"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cd_send_location"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_place"
+                    app:tint="@color/tg_secondary" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnSend"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle_blue"
+                android:contentDescription="@string/cd_send"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_send"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

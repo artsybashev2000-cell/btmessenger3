@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BtMessenger</string>
+
+    <!-- Общие -->
+    <string name="cancel">Отмена</string>
+    <string name="close">Закрыть</string>
+    <string name="save">Сохранить</string>
+    <string name="later">Позже</string>
+    <string name="delete">Удалить</string>
+    <string name="accept">Принять</string>
+    <string name="reject">Отклонить</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="copied">Скопировано</string>
+    <string name="open_chat">Открыть чат</string>
+
+    <!-- Шапка и описания кнопок -->
+    <string name="cd_back">Назад</string>
+    <string name="cd_menu">Меню</string>
+    <string name="cd_scan">Искать устройства</string>
+    <string name="cd_send">Отправить</string>
+    <string name="cd_send_location">Отправить, где я</string>
+    <string name="cd_visible">Стать видимым</string>
+    <string name="cd_sos">Отправить сигнал SOS</string>
+    <string name="sos_button">SOS</string>
+    <string name="search_hint">Поиск</string>
+    <string name="message_hint">Сообщение</string>
+    <string name="visible_title">Стать видимым</string>
+    <string name="visible_subtitle">Чтобы другой телефон вас нашёл (на 5 минут)</string>
+
+    <!-- Состояние связи -->
+    <string name="status_no_adapter">На этом телефоне нет Bluetooth</string>
+    <string name="status_bt_off">Bluetooth выключен</string>
+    <string name="status_no_permission">нет разрешения на Bluetooth</string>
+    <string name="status_starting">запуск…</string>
+    <string name="status_stopped">связь выключена</string>
+    <string name="status_idle">ожидание подключения</string>
+    <string name="status_scanning">поиск устройств…</string>
+    <string name="status_connecting">подключение к %1$s…</string>
+    <string name="status_reconnecting">переподключение к %1$s (попытка %2$d)…</string>
+    <string name="status_waiting_accept">ждём, пока %1$s примет подключение</string>
+    <string name="status_request">%1$s хочет подключиться</string>
+    <string name="status_connected">на связи: %1$s</string>
+
+    <string name="chat_online">в сети</string>
+    <string name="chat_online_role">в сети · %1$s</string>
+    <string name="chat_offline">не в сети</string>
+    <string name="chat_offline_role">не в сети · %1$s</string>
+    <string name="chat_connecting">подключение…</string>
+    <string name="chat_reconnecting">переподключение (попытка %1$d)…</string>
+    <string name="chat_waiting">ожидание ответа…</string>
+
+    <string name="banner_bt_off">Bluetooth выключен</string>
+    <string name="banner_no_permission">Нет разрешения на Bluetooth</string>
+    <string name="banner_stopped">Связь выключена — к вам нельзя подключиться</string>
+    <string name="action_turn_on">Включить</string>
+    <string name="action_turn_off">Выключить</string>
+    <string name="action_allow">Разрешить</string>
+    <string name="action_answer">Ответить</string>
+    <string name="action_open">Открыть</string>
+    <string name="action_connect">Подключиться</string>
+    <string name="action_switch">Переключиться</string>
+
+    <string name="offline_idle">Нет связи. Сообщения сохранятся и уйдут, когда подключитесь.</string>
+    <string name="offline_connecting">Подключение… Сообщения уйдут, как только появится связь.</string>
+    <string name="offline_bt_off">Bluetooth недоступен. Сообщения сохранятся и уйдут позже.</string>
+    <string name="offline_busy">Сейчас на связи с %1$s. Сообщения сюда уйдут позже.</string>
+
+    <!-- Уведомления и подсказки движка связи -->
+    <string name="notice_bt_turned_off">Bluetooth выключен — связь прервана</string>
+    <string name="notice_bt_not_ready">Bluetooth не готов</string>
+    <string name="notice_connect_failed">Не удалось подключиться к %1$s. Проверьте, что на нём открыто это приложение и включён Bluetooth</string>
+    <string name="notice_reconnect_gave_up">Не удалось восстановить связь с %1$s</string>
+    <string name="notice_peer_left">%1$s отключился</string>
+    <string name="notice_peer_busy">%1$s не может принять подключение: у него уже занято максимум соединений</string>
+    <string name="notice_too_many_links">Нельзя держать больше %1$d соединений одновременно. Отключите кого-нибудь и попробуйте снова</string>
+    <string name="notice_incoming_over_limit">%1$s хочет подключиться, но уже занято %2$d соединений — это максимум. Отключите кого-нибудь, чтобы принять</string>
+    <string name="notice_peer_no_answer">%1$s не ответил на запрос</string>
+    <string name="notice_peer_rejected">%1$s отклонил подключение</string>
+    <string name="notice_link_lost">Связь с %1$s потеряна. Ждём, когда он переподключится</string>
+    <string name="notice_connected">На связи: %1$s</string>
+
+    <string name="channel_status">Работа связи</string>
+    <string name="channel_messages">Сообщения</string>
+    <string name="channel_requests">Запросы на подключение</string>
+    <string name="channel_sos">Тревога SOS</string>
+    <string name="channel_sos_desc">Громкое уведомление, когда кто-то отправил сигнал SOS</string>
+
+    <!-- Запрос на подключение -->
+    <string name="request_title">Запрос на подключение</string>
+    <string name="request_device">телефон: %1$s</string>
+
+    <!-- Списки -->
+    <string name="section_chats">Чаты</string>
+    <string name="section_devices">Устройства рядом</string>
+    <string name="section_devices_scanning">Устройства рядом — поиск…</string>
+    <string name="devices_empty_hint">Телефоны с BtMessenger рядом появятся здесь сами. Если нужного нет, нажмите кнопку поиска, а на втором телефоне — «Стать видимым».</string>
+    <string name="device_ble_title">Телефон с BtMessenger</string>
+    <string name="device_ble_tag">есть BtMessenger</string>
+    <string name="devices_scanning_hint">Ищем… Обычно это занимает до 12 секунд.</string>
+    <string name="devices_not_matched">Ничего не найдено по запросу</string>
+    <string name="device_bonded">сопряжено</string>
+    <string name="peer_no_messages">нет сообщений</string>
+    <string name="peer_online_prefix">● %1$s</string>
+    <string name="peer_nearby_prefix">рядом · %1$s</string>
+    <string name="preview_you">Вы: %1$s</string>
+    <string name="preview_geo">📍 Геопозиция</string>
+    <string name="preview_sos">🆘 SOS</string>
+    <string name="signal_fmt">сигнал %1$s (%2$d дБм)</string>
+    <string name="signal_excellent">отличный</string>
+    <string name="signal_good">хороший</string>
+    <string name="signal_weak">слабый</string>
+    <string name="signal_very_weak">очень слабый</string>
+
+    <string name="scan_nothing_found">Ничего не найдено. На втором телефоне должно быть нажато «Стать видимым»</string>
+    <string name="scan_failed">Не удалось начать поиск</string>
+    <string name="visible_failed">Не удалось включить видимость</string>
+
+    <!-- Сообщения -->
+    <string name="status_pending">ожидает отправки</string>
+    <string name="status_sent">отправлено</string>
+    <string name="status_delivered">доставлено</string>
+    <string name="geo_title">Геопозиция</string>
+    <string name="geo_bubble">📍 Геопозиция\n%1$s</string>
+    <string name="geo_link">Направление и карта</string>
+    <string name="geo_accuracy">±%1$d м</string>
+    <string name="geo_fix_at">замер в %1$s</string>
+    <string name="geo_stale">⚠ точка устарела: замер за %1$s до отправки</string>
+    <string name="geo_accuracy_unknown">точность неизвестна</string>
+    <string name="geo_no_source">Нет доступного источника геопозиции. Проверьте режим геолокации и разрешение «Точное местоположение» в настройках</string>
+    <string name="geo_failed">Не удалось определить местоположение. Выйдите на открытое место</string>
+    <string name="geo_locating">📍 Определяю местоположение…  Нажмите, чтобы отменить</string>
+    <string name="my_location">Моя точка</string>
+    <string name="geo_direction">Направление и расстояние</string>
+    <string name="geo_open_maps">Открыть в картах</string>
+    <string name="geo_open_yandex">Яндекс Карты</string>
+    <string name="geo_copy">Скопировать координаты</string>
+    <string name="choose_map_app">Открыть в приложении карт</string>
+    <string name="no_map_app">Нет приложения карт. Для работы без интернета установите, например, Organic Maps или OsmAnd</string>
+    <string name="map_open_failed">Не удалось открыть карту</string>
+
+    <!-- Направление -->
+    <string name="direction_locating">Определяю ваше местоположение…</string>
+    <string name="direction_bearing">азимут %1$d° (%2$s)</string>
+    <string name="direction_no_compass">На телефоне нет датчика компаса, поэтому стрелки нет. Ориентируйтесь по азимуту: 0° — север, 90° — восток, 180° — юг, 270° — запад</string>
+    <string name="direction_compass_wait">Ждём данные компаса — стрелка появится, как только он ответит</string>
+    <string name="direction_my_acc">ваша точность ±%1$d м</string>
+    <string name="direction_target_acc">точность точки %1$s</string>
+    <string name="direction_calibrate">Держите телефон горизонтально, вдали от металла. Если стрелка врёт — покачайте телефон восьмёркой.</string>
+    <string-array name="compass_points">
+        <item>С</item>
+        <item>СВ</item>
+        <item>В</item>
+        <item>ЮВ</item>
+        <item>Ю</item>
+        <item>ЮЗ</item>
+        <item>З</item>
+        <item>СЗ</item>
+    </string-array>
+    <string name="dist_m">%1$d м</string>
+    <string name="dist_km">%1$s км</string>
+    <string name="dur_sec">%1$d с</string>
+    <string name="dur_min">%1$d мин</string>
+    <string name="dur_hour">%1$d ч</string>
+    <string name="dur_hour_min">%1$d ч %2$d мин</string>
+    <string name="dur_day">%1$d дн</string>
+
+    <!-- SOS -->
+    <string name="sos_from">🆘 SOS от %1$s</string>
+    <string name="sos_title">🆘 SOS</string>
+    <string name="sos_default_text">Нужна помощь!</string>
+    <string name="sos_no_geo">координаты пока неизвестны — обновятся в этом же сообщении, когда определятся</string>
+    <string name="sos_confirm_title">Отправить SOS?</string>
+    <string name="sos_confirm_text">Собеседник (%1$s) получит громкую тревогу и ваши координаты.</string>
+    <string name="sos_send">Отправить SOS</string>
+    <string name="sos_sent">SOS отправлен. Координаты в нём обновятся, когда определятся свежие</string>
+    <string name="sos_queued">Нет связи: SOS сохранён и уйдёт сразу после подключения. Смотрите значок часов у сообщения</string>
+    <string name="sos_queued_location_off">Нет связи и выключена геолокация: SOS уйдёт после подключения, но без координат</string>
+    <string name="sos_sent_location_off">SOS отправлен без координат: геолокация выключена. Включите её и отправьте местоположение отдельно</string>
+    <string name="sos_no_peer">Откройте чат с человеком, которому нужно отправить SOS</string>
+
+    <!-- Меню -->
+    <string name="menu_connect">Подключиться</string>
+    <string name="menu_disconnect">Отключиться</string>
+    <string name="menu_sos">🆘 Отправить SOS</string>
+    <string name="menu_clear_history">Очистить историю</string>
+    <string name="menu_visible">Стать видимым</string>
+    <string name="menu_refresh">Обновить список</string>
+    <string name="menu_show_all">Показывать все устройства</string>
+    <string name="menu_alarm_settings">Сигнал SOS и «Не беспокоить»</string>
+    <string name="dnd_title">Сигнал SOS и «Не беспокоить»</string>
+    <string name="dnd_why">Когда включён режим «Не беспокоить», сигнал SOS от собеседника может не прозвучать. Приложение само этот режим не меняет — решаете вы. Чтобы тревога звучала всегда, откройте настройки канала «Тревога SOS» и включите пункт про «Не беспокоить» (обычно «Переопределить режим „Не беспокоить“»). Остальные уведомления это не затронет.</string>
+    <string name="dnd_on">Тревога SOS уже звучит и в режиме «Не беспокоить». Изменить это можно в настройках канала «Тревога SOS».</string>
+    <string name="menu_profile">Мой профиль</string>
+    <string name="menu_exit">Выключить связь и выйти</string>
+    <string name="menu_forget">Удалить чат</string>
+    <string name="clear_title">Очистить историю?</string>
+    <string name="clear_text">Сообщения удалятся только на этом телефоне.</string>
+    <string name="forget_title">Удалить чат?</string>
+    <string name="forget_text">История с %1$s удалится, а при следующем подключении он снова попросит разрешения.</string>
+
+    <!-- Профиль -->
+    <string name="profile_title_first">Как вас представить собеседникам?</string>
+    <string name="profile_title">Мой профиль</string>
+    <string name="profile_name_hint">Имя и фамилия</string>
+    <string name="profile_role_hint">Должность или участок (необязательно)</string>
+    <string name="profile_note">Это увидят те, к кому вы подключитесь, вместо модели телефона.</string>
+    <string name="profile_saved">Сохранено. Собеседники увидят это при следующем подключении</string>
+
+    <!-- Разрешения -->
+    <string name="no_bluetooth">На этом телефоне нет Bluetooth</string>
+    <string name="permissions_title">Нужно разрешение</string>
+    <string name="need_bt_permissions">Без разрешения «Устройства поблизости» приложение не может работать с Bluetooth</string>
+    <string name="need_bt_permissions_settings">Разрешение «Устройства поблизости» запрещено. Включите его в настройках приложения.</string>
+    <string name="need_location_for_scan_settings">На этой версии Android для поиска Bluetooth-устройств нужно разрешение на геопозицию. Включите его в настройках приложения.</string>
+    <string name="service_problem_title">Фоновая работа не запущена</string>
+    <string name="service_no_permission">Нет разрешения «Устройства поблизости», поэтому связь не работает в фоне. Нажмите «Включить» и разрешите доступ.</string>
+    <string name="service_start_failed">Не удалось запустить фоновую службу. Нажмите «Включить»; если не помогает — проверьте разрешения приложения в настройках телефона.</string>
+    <string name="service_bg_not_started">Фоновая работа не запущена: связь будет работать, только пока приложение открыто</string>
+    <string name="notifications_title">Уведомления</string>
+    <string name="notifications_why">Уведомления нужны, чтобы вы увидели сигнал SOS и сообщения, когда приложение свёрнуто или экран выключен. Без них постоянное уведомление службы не видно, но приложение продолжит работать.</string>
+    <string name="notifications_denied_hint">Без уведомлений сигнал SOS можно пропустить, пока приложение свёрнуто. Включить их можно в настройках телефона.</string>
+    <string name="banner_notifications_off">Уведомления выключены — можно пропустить SOS</string>
+    <string name="need_location_permission">Нужно разрешение на геопозицию</string>
+    <string name="need_mic_permission">Для голосовых сообщений нужно разрешение на микрофон</string>
+    <string name="need_mic_settings">Доступ к микрофону запрещён. Включите его в настройках приложения.</string>
+    <string name="need_location_settings">Доступ к геопозиции запрещён. Включите его в настройках приложения.</string>
+    <string name="bt_not_enabled">Bluetooth не включён</string>
+    <string name="location_off_title">Геолокация выключена</string>
+    <string name="location_off_for_scan">На Android 11 и ниже поиск Bluetooth-устройств работает только при включённой геолокации. Включите её в настройках.</string>
+    <string name="location_off_for_geo">Чтобы отправить своё местоположение, включите геолокацию.</string>
+    <string name="location_off_for_direction">Чтобы показать направление, нужно знать, где вы. Включите геолокацию.</string>
+
+    <!-- Группы -->
+    <string name="menu_new_group">Новая группа</string>
+    <string name="menu_group_members">Состав группы</string>
+    <string name="menu_group_connect">Подключить участников</string>
+    <string name="menu_leave_group">Выйти из группы</string>
+
+    <string name="group_new_title">Новая группа</string>
+    <string name="group_name_hint">Название группы</string>
+    <string name="group_pick_label">Кого пригласить (из знакомых)</string>
+    <string name="group_new_note">Приглашение дойдёт, когда человек будет на связи. Вступление без подтверждения, выйти из группы можно в любой момент. Переписка идёт только между телефонами, которые подключены друг к другу.</string>
+    <string name="group_create">Создать</string>
+    <string name="group_no_contacts">Пока нет знакомых собеседников. Сначала подключитесь к телефону хотя бы один раз — тогда его можно позвать в группу</string>
+    <string name="group_pick_limit">Телефон держит не больше %1$d соединений, поэтому сразу можно пригласить не больше %1$d человек</string>
+    <string name="group_create_failed">Не удалось создать группу</string>
+    <string name="group_created">Группа создана. Приглашения дойдут до участников, когда они будут на связи</string>
+    <string name="group_default_name">Группа</string>
+    <string name="group_no_messages">нет сообщений</string>
+    <string name="group_member_badge">👥 %1$d</string>
+    <plurals name="group_members_count">
+        <item quantity="one">%d участник</item>
+        <item quantity="few">%d участника</item>
+        <item quantity="many">%d участников</item>
+        <item quantity="other">%d участника</item>
+    </plurals>
+    <string name="group_subtitle_online">%1$s · в сети: %2$d</string>
+    <string name="preview_author">%1$s: %2$s</string>
+    <string name="group_member_unknown">Участник</string>
+    <string name="group_you">Вы</string>
+    <string name="group_member_me">%1$s (вы)</string>
+    <string name="group_member_online">● %1$s · в сети</string>
+    <string name="group_member_offline">○ %1$s · не на связи</string>
+    <string name="group_members_title">%1$s — состав</string>
+    <string name="group_all_connected">Все участники уже на связи</string>
+    <string name="group_nobody_to_connect">Телефоны остальных участников вам пока не знакомы. Подключитесь к ним через поиск устройств — тогда их можно будет подключать отсюда</string>
+    <string name="offline_group">Не все участники на связи. Сообщения дойдут до них, когда они подключатся.</string>
+    <string name="offline_group_alone">В группе больше никого нет. Сообщения некому отправлять.</string>
+    <string name="leave_group_title">Выйти из группы?</string>
+    <string name="leave_group_text">Группа «%1$s» и её переписка удалятся на этом телефоне, участники на связи увидят, что вы вышли. Остальные узнают при следующем подключении.</string>
+    <string name="leave_group_action">Выйти</string>
+    <string name="group_left_toast">Вы вышли из группы «%1$s»</string>
+    <string name="notice_added_to_group">%1$s добавил вас в группу «%2$s»</string>
+    <string name="notice_member_left_group">%1$s вышел из группы «%2$s»</string>
+    <string name="sos_group_confirm_text">Участники группы «%1$s», которые на связи, получат громкую тревогу и ваши координаты. Остальные — когда подключатся.</string>
+    <string name="sos_from_group">🆘 SOS от %1$s (%2$s)</string>
+    <string name="msg_via">через %d</string>
+    <string name="menu_relay">Пересылка по цепочке</string>
+    <string name="relay_title">Пересылка по цепочке</string>
+    <string name="relay_enable">Пересылать чужие сообщения</string>
+    <string name="relay_enable_note">Телефон передаёт сообщения других телефонов дальше, и они доходят туда, куда напрямую не достать. Это тратит заряд батареи. Если выключить, телефон ничего не пересылает. Сообщения, адресованные вам, приходят как обычно.</string>
+    <string name="relay_foreign">Пересылать сообщения чужих групп</string>
+    <string name="relay_foreign_note">Группы, в которых вы не состоите. Текст таких сообщений проходит через ваш телефон, но не сохраняется. По умолчанию выключено.</string>
+    <string name="relay_count">Переслано сообщений: %d</string>
+    <string name="relay_reset_count">Сбросить счётчик</string>
+    <string name="voice_peer_unsupported">Собеседник не поддерживает голос: ему нужно обновить приложение</string>
+    <string name="voice_no_link">Нет связи с собеседником: голос не отправлен</string>
+
+    <!-- Голос и рация: кнопка, запись, лента, проигрывание -->
+    <string name="cd_mic">Микрофон: нажмите — записать голосовое сообщение, удерживайте — рация</string>
+    <string name="cd_voice_play">Воспроизвести</string>
+    <string name="cd_voice_stop">Остановить</string>
+    <string name="cd_voice_cancel">Отменить запись</string>
+    <string name="cd_voice_send">Отправить голосовое сообщение</string>
+    <string name="preview_voice">🎤 Голосовое (%1$s)</string>
+    <string name="voice_progress">%1$s / %2$s</string>
+    <string name="voice_hint_once">Микрофон: нажмите — записать голосовое сообщение, удерживайте — рация (говорите, пока держите кнопку)</string>
+    <string name="rec_hint_message">Говорите. ✕ — отменить, ➤ — отправить</string>
+    <string name="rec_hint_radio">РАЦИЯ — вы в эфире. Отпустите кнопку, чтобы закончить</string>
+    <string name="rec_too_short">Запись слишком короткая</string>
+    <string name="rec_limit_reached">Достигнут предел в одну минуту: сообщение отправлено</string>
+    <string name="rec_cancelled_bg">Запись отменена: приложение свёрнуто</string>
+    <string name="mic_granted_retry">Доступ к микрофону разрешён. Нажмите на микрофон ещё раз</string>
+    <string name="radio_need_link">Рация работает только при связи с собеседником. Сначала подключитесь</string>
+    <string name="radio_incoming">📻 Говорит %1$s</string>
+    <string name="voice_send_failed">Не удалось отправить голосовое сообщение</string>
+    <string name="voice_save_failed">Не удалось сохранить голосовое сообщение (возможно, нет места на телефоне)</string>
+    <string name="voice_file_missing">Звук этого сообщения не найден на телефоне</string>
+    <string name="voice_play_failed">Не удалось воспроизвести: нет декодера или динамик занят</string>
+    <string name="voice_no_codec">На этом телефоне нет кодека AMR-WB, голос недоступен</string>
+    <string name="voice_mic_busy">Не удалось включить микрофон. Возможно, он занят (звонок или другое приложение)</string>
+    <string name="voice_in_failed">Голосовое сообщение от %1$s дошло не целиком. Пусть отправит ещё раз</string>
+    <!-- Контроль неподвижности -->
+    <string name="menu_still">Контроль неподвижности</string>
+    <string name="still_title">Контроль неподвижности</string>
+    <string name="still_enable">Предупреждать, если я не двигаюсь</string>
+    <string name="still_enable_note">Если телефон долго неподвижен, приложение громко и вибрацией спросит, всё ли в порядке. Если не ответить, всем подключённым собеседникам уйдёт SOS с вашими координатами. Работает, пока включена связь.</string>
+    <string name="still_after_label">Предупреждать после неподвижности</string>
+    <string name="still_reply_label">Время на ответ</string>
+    <string name="still_surface">Не предупреждать, если телефон ровно лежит</string>
+    <string name="still_surface_note">Телефон на столе не считается тревогой. Но если человек упал, а телефон лёг рядом ровно, предупреждения не будет.</string>
+    <string name="still_limits">Определение приблизительное: бывают ложные срабатывания и пропуски. Не рассчитывайте на него как на единственное средство помощи.</string>
+    <string name="still_sec_fmt">%1$d с</string>
+    <string name="still_min_fmt">%1$d мин</string>
+    <string name="still_need_notifications">Без уведомлений предупреждение не покажется, поэтому контроль неподвижности не заработает. Разрешите уведомления в настройках телефона.</string>
+    <string name="channel_still">Предупреждение о неподвижности</string>
+    <string name="channel_still_desc">Громкий сигнал, если телефон долго неподвижен: можно ответить «Я в порядке», иначе уйдёт SOS</string>
+    <string name="still_alert_title">🆘 Вы в порядке?</string>
+    <string name="still_alert_text">Телефон не двигается уже %1$s. Нажмите, чтобы отменить, иначе SOS уйдёт автоматически — таймер справа.</string>
+    <string name="still_ok">Я в порядке</string>
+    <string name="still_sos_text">Нужна помощь! Телефон долго не двигается, человек не ответил на запрос.</string>
+    <string name="still_sent_title">🆘 SOS отправлен</string>
+    <string name="still_sent_text">Вы не ответили на предупреждение. Получателей: %1$d</string>
+    <string name="still_waiting_title">SOS ждёт связи</string>
+    <string name="still_waiting_text">Нет подключённых собеседников. SOS уйдёт тому, с кем появится связь в ближайшие 30 минут. Нажмите «Я в порядке», чтобы отменить.</string>
+    <string name="still_gaveup_title">SOS не отправлен</string>
+    <string name="still_gaveup_text">За 30 минут связь ни с кем не появилась.</string>
+</resources>

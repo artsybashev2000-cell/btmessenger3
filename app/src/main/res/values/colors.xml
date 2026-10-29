@@ -1,0 +1,21 @@
+<resources>
+    <color name="tg_header">#17212B</color>
+    <color name="tg_chat_bg">#0E1621</color>
+    <color name="tg_bubble_in">#182533</color>
+    <color name="tg_bubble_out">#2B5278</color>
+    <color name="tg_accent">#5EB5F7</color>
+    <color name="tg_fab">#2AABEE</color>
+    <color name="tg_secondary">#6D7F8F</color>
+    <color name="tg_secondary_light">#9FB3C4</color>
+    <color name="tg_time_out">#7DA8D0</color>
+    <color name="tg_search">#242F3D</color>
+    <color name="tg_wall_top">#0B1119</color>
+    <color name="tg_wall_bottom">#13202D</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="online">#4FCE5D</color>
+    <color name="warning">#F5B041</color>
+    <color name="sos_red">#E53935</color>
+    <color name="bubble_sos">#6B1F24</color>
+    <color name="radio_live">#2E7D32</color>
+    <color name="launcher_bg">#2AABEE</color>
+</resources>
